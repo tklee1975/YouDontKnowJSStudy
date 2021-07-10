@@ -35,6 +35,21 @@
    }
    console.log("After the scope a block: aVar=" + aVar); // also okay
 
+   var undefineVar;
+   console.log("Undefind Var=", undefineVar);
+   
+
+   var innerVar;
+   console.log("Before aFunction declaration: " + aFunction() + " innerVar=" + innerVar);
+
+   function aFunction() {
+        innerVar = 123;              // ken: see if remove 'var' declaration
+       return "[" + "aVar=" + aVar + " inner=" + innerVar + "]";
+   }
+
+   console.log("After aFunction declaration: " + aFunction() + " innerVar=" + innerVar);
+
+
 </script>
 
 </html>

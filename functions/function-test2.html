@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Function test 1</title>
+</head>
+
+<body>
+    <h2>Open console for testing</h2>
+
+</body>
+<script>
+    
+    aVar = 123;
+    var aInnerVar;
+    console.log("Before aFunction declaration: " + aFunction() + " innerVar=" + aInnerVar);
+</script>    
+
+    <script src="function-test2-external.js"></script>
+
+<script>    
+    console.log("After include script. result=" + externalFunc);
+
+   // ken: Finding:
+   //       functions are hoisting before the script executing 
+
+</script>
+
+</html>

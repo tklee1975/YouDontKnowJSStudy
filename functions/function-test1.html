@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Function test 1</title>
+</head>
+
+<body>
+    <h2>Open console for testing</h2>
+
+</body>
+<script>
+    
+    aVar = 123;
+    var aInnerVar;
+    console.log("Before aFunction declaration: " + aFunction() + " innerVar=" + aInnerVar);
+
+    function aFunction() {
+        var aInnerVar = 234;              // ken: see if add 'var' declaration, aInnerVar is added in global
+        return "[" + "var=" + aVar + " inner=" + aInnerVar + "]";
+    }
+
+    console.log("After aFunction declaration: " + aFunction() + " innerVar=" + aInnerVar);
+
+   // ken: Finding:
+   //       functions are hoisting before the script executing 
+
+</script>
+
+</html>
