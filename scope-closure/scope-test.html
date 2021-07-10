@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Demo</title>
+</head>
+
+<body>
+    <h2>Open console for testing</h2>
+
+</body>
+<script>
+    // Data 
+   //console.log("aVar=" + aVar); // expect: undefine, this break the scipe
+
+   aVar = 123;
+   console.log("aVar=" + aVar); // expect: undefine
+
+   {
+       console.log("inside a block: aVar=" + aVar); // also okay
+   }
+
+   {
+       aVar =234;           // No different when with var
+       console.log("aVar is assigned inside a bloc and aVar=" + aVar); // also okay
+   }
+   console.log("After the scope a block: aVar=" + aVar); // also okay
+
+   {
+       let aVar =567;
+       console.log("aVar is assigned inside a bloc and aVar=" + aVar); // also okay
+   }
+   console.log("After the scope a block: aVar=" + aVar); // also okay
+
+</script>
+
+</html>

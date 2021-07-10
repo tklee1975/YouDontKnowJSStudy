@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Demo</title>
+</head>
+
+<body>
+    <h2>Open console for testing</h2>
+
+</body>
+<script>
+    // Data 
+    firstName = "Kencoder";
+    var me = {
+        name: "Kencoder",
+        job: "Developer",
+        age: 999,
+    };
+
+    // test
+    console.log("using double quote");
+    console.log("My name is ${ firstName }.");
+    // My name is ${ firstName }.
+
+    console.log("using single quote");
+    console.log('My name is ${ firstName }.');
+    // My name is ${ firstName }.
+
+    console.log("using back tick (interpolation)");
+    console.log(`My name is ${firstName}.`);
+
+    console.log("using object")
+    console.log(`Whole Object is ${me}.`);
+    console.log(`My name is ${me.name}.`);
+
+</script>
+
+</html>
