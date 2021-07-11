@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Demo</title>
+</head>
+
+<body>
+    <h1>Testing Scope & Variable function</h1>
+    <h2>Open console for testing</h2>
+
+</body>
+<script>
+    // Snippet 1    
+    // function foo(a) {
+    //     var b = a;
+    //     return a + b;
+    // }
+
+    // var c = foo(2);
+    // console.log("c=", c);
+    // ------------
+
+
+    // Snippet 2   
+    // function foo(a) {
+    //     console.log("a=", a);
+    // }
+    // var a = 10;    
+    // foo(2);      // a = 2
+    // console.log("a=", a);   // a = 10
+    // ------------
+
+    // Snippet 3   
+    // function foo(a) {
+    //     b = 20;
+    //     console.log("foo(): a=", a, " b=", b);
+    // }
+
+
+    // b = 10;             // what if using var, let, const
+    // var a = 1;          // what if using var, let, const
+
+    // console.log("A: a=", a, " b=", b);   // a = 10, b=10
+
+    // foo(2);      // a = 2
+
+    // console.log("B: a=", a, " b=", b);   // a = 10, b=20
+    // ------------
+
+    // Snippet 4   
+    // function foo(expr, a) {
+    //     eval(expr);     // cheating, but it's not good
+    //     console.log("foo(): a=", a, " b=", b);
+    // }
+
+
+    // b = 10;             // what if using var, let, const
+    // var a = 1;          // what if using var, let, const
+
+    // console.log("A: a=", a, " b=", b);   // a = 10
+
+    // //foo('let b=20', 2);      // a = 2, b=10
+    // foo('var b=20', 2);      // a = 2, b=20
+
+    // console.log("B: a=", a, " b=", b);   // a = 10
+    // ------------
+
+    // Snippet 5  
+    function foo(expr) {
+        //'use strict';
+        eval(expr);     // cheating, but it's not good
+        console.log("a=", a);
+    }
+
+    foo('var a=20');      // a=20
+                          // a is not defined ('use strict')
+    
+    // ------------
+
+</script>
+
+</html>

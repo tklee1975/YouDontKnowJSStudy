@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Demo</title>
+</head>
+
+<body>
+    <h1>Testing Scope & Variable</h1>
+    <h2>Open console for testing</h2>
+
+</body>
+<script>
+    // Snippet 1    
+    // console.log("a=", a); // error: a is not defined
+
+    // ------------
+
+    // Snippet 2    
+    // var a;
+    // a;                  // this is wrong
+    // console.log("a=", a); // showing a= undefined
+
+    // ------------
+
+    // Snippet 3
+    //var a = 3;
+    // a=3;                    // same as var a=3
+    // console.log("a=", a);   // showing a= 3
+
+    // ------------
+
+    // Snippet 4
+    // let a = 1;
+    // a=3;                    
+    // console.log("a=", a);   // showing a= 3
+    // ------------
+
+    // Snippet 5
+    // a = 1
+    // let a;
+    // a=3;                    
+    // console.log("a=", a);   // Showing Error: 
+    // ------------
+
+    // Snippet 6
+    // a = 1
+    // var a;
+    // a;
+    // a = 3;
+    // console.log("a=", a);   // a=3 
+    // ------------
+
+    // Snippet 7
+    // a = 1
+    // a = "A String"
+    // console.log("a=", a);   // a= A String 
+    // ------------
+
+    // Snippet 8
+
+    // function a() {
+    //     console.log("hello");
+    // }
+
+    // a = 1
+
+    // a();            //  a is not a function
+    // ------------
+
+    // Snippet 9
+    // let a = 1       // Show already declared
+
+    // function a() {  // Identifier 'a' has already been declared
+    //     console.log("hello. a=", a);
+    // }
+
+    // a();            
+    // ------------
+
+    // Snippet 10
+    // function a() {  
+    //     console.log("hello. a=", a);
+    // }
+
+    // let a = 1       // Identifier 'a' has already been declared
+
+    // a();            
+    // ------------
+
+    // Snippet 11
+    // let a = 1;     
+    // const a = 2;    // Identifier 'a' has already been declared
+
+    // console.log("a=", a);  
+    // ------------
+
+    // Snippet 12
+    // const a = 1;    // Identifier 'a' has already been declared
+    // a = 2;          // Assignment to constant variable.
+
+    // console.log("a=", a);
+    // ------------
+
+    // Snippet 13
+    // let a = 1;    // Identifier 'a' has already been declared
+    // console.log("a=", a);
+
+    // a = "String";
+    // console.log("a=", a);
+
+    // a = {x: 1, y:2}
+    // console.log("a=", a);
+
+    // a = function hello() {
+    //     console.log("hello");
+    // }
+    // console.log("a=", a);
+    // a();
+
+    // hello();        //ReferenceError: hello is not define
+
+
+    // ------------
+
+
+    // Snippet 14
+
+    function hello() {
+        console.log("hello");
+    }
+    a = hello;
+    console.log("a=", a);
+    a();
+
+    hello();        //ReferenceError: hello is not define
+
+
+    // ------------
+
+</script>
+
+</html>

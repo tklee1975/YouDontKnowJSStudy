@@ -13,20 +13,23 @@
 
 </body>
 <script>
-    
-    aVar = 123;
-    var aInnerVar;
-    console.log("Before aFunction declaration: " + aFunction() + " innerVar=" + aInnerVar);
+    console.log("script part1 is executed");
+    console.log("Result of externalFunc: (before src) " + externalFunc());  // Reference Error
 </script>    
 
     <script src="function-test2-external.js"></script>
 
 <script>    
-    console.log("After include script. result=" + externalFunc);
+    console.log("script part2 is executed");
+    console.log("Result of externalFunc: (after src) " + externalFunc());
 
    // ken: Finding:
-   //       functions are hoisting before the script executing 
+   //       1. functions are hoisting before the script executing 
+   //       2. script file still need to load first 
+   //       3. Non depending script can be load later
 
 </script>
+
+
 
 </html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Closure Demo</title>
+</head>
+
+<body>
+    <h2>Open console for testing</h2>
+
+</body>
+<script>
+    const kContent = 999;
+    _gVar = 888;
+
+   
+
+    var barFunc = foo();
+    barFunc();
+
+    var barFunc2 = foo();
+
+
+    // functions 
+    function foo() {
+        // a = 1;
+        // var a = 2;      // this will move to the closure
+        let a = 3;
+        //let localValue = 50;
+
+        function bar() {
+            console.log("a=", a, ' constant=', kContent, ' global=', _gVar); // 2
+        }
+
+        return bar;
+    }
+</script>
+
+</html>

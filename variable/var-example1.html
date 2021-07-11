@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Variable Demo</title>
+</head>
+
+<body>
+    <h2>Open console for testing</h2>
+
+</body>
+<script>
+    // Primitive type 
+    var var1 = 123;
+    var var2 = var1;
+    var2 = 234;
+
+    console.log("var1=", var1, " var2=", var2); // 
+
+    // Object type (it's reference)
+    var varA = {name: 'Kencoder'};
+    var varB = varA;                    // note: this is a reference of A
+    varB.name = "Kencoder X";
+
+    console.log("varA=", varA, " varB=", varB);
+   
+    // Object var (copy)
+    var varC = {lang: 'Javascript', 'purpose': 'web'};
+    var varD = {...varC};                    // note: this is not a reference of A
+    varD.lang = "HTML";
+
+    console.log("varC=", varC, " varD=", varD);
+   
+
+</script>
+
+</html>
