@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Demo</title>
+</head>
+
+<body>
+    <h1>Block as Scope</h1>
+    <h2>Open console for testing</h2>
+
+</body>
+<script>
+    // Snippet 1     for-block 
+    // for (var i = 0; i < 10; i++) {       // var is belong to global
+    //     console.log(i);
+    // }
+    // console.log("after loop: ", i);
+
+    // ------------
+
+    // Snippet 1 (variation)    
+    // i = 100; 
+
+    // console.log("before loop: ", i);
+    // for (var i = 0; i < 10; i++) {       // var is belong to global
+    //     console.log(i);
+    // }
+    // console.log("after loop: ", i);     // oop: i is populated 
+    // ------------
+
+    // Snippet 1 (Fixed) 
+    // i = 100;
+    // console.log("before loop: ", i);   
+    // for (let i = 0; i < 10; i++) {
+    //     console.log(i);
+    // }
+    // console.log("after loop: ", i);     
+    // ------------
+
+    //Snippet 2     if block 
+
+    // var foo = true;
+
+    // if (foo) {
+    //     var bar = foo * 2;
+    //     console.log(bar);
+    // }
+    // console.log("outside-if-block: ", bar);
+    // ------------
+
+
+    //Snippet 2 (problem )
+
+    // var foo = true;
+    // var bar = 100;    
+    // console.log("before: foo=", foo, " bar=", bar);
+    // if (foo) {
+    //     var bar = foo * 2;      // var bar is redundant 
+    //     console.log("foo=", foo, " bar=", bar);
+    // }
+    // console.log("outside: foo=", foo, " bar=", bar);
+    // ------------
+
+    // //Snippet 3 (solution 1)
+
+    // var foo = true;
+    // const bar = 100;    
+    // console.log("before: foo=", foo, " bar=", bar);
+    // if (foo) {
+    //     var bar = foo * 2;      // error here!!
+    //     console.log("foo=", foo, " bar=", bar);
+    // }
+    // console.log("outside: foo=", foo, " bar=", bar);
+    // // ------------
+
+    //Snippet 3 (solution 2)
+
+    // var foo = true;
+    // var bar = 100;    
+    // console.log("before: foo=", foo, " bar=", bar);
+    // if (foo) {
+    //     let bar = foo * 2;      // error here!!
+    //     console.log("foo=", foo, " bar=", bar);
+    // }
+    // console.log("outside: foo=", foo, " bar=", bar);
+    // ------------
+
+    // Snippet 4
+    try {
+        undefined(); // illegal operation to force an exception!
+    }
+    catch (err) {
+        console.log("catch Error:", err); // works!
+    }
+
+    console.log(err); // ReferenceError: `err` not found
+
+</script>
+
+</html>

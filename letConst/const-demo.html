@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Const Demo</title>
+</head>
+
+<body>
+    <h2>Const Demo</h2>
+
+</body>
+<script>
+
+    console.log("\n\nExperiment 1: Const Value");
+    console.log("------------------------------------------");
+
+    const constantValue = 1;
+
+    // constantValue = 2;   // break here!
+
+    console.log("constantValue=" + constantValue);
+
+
+    console.log("\n\nExperiment 2: Const Function");
+    console.log("------------------------------------------");
+    
+    const constFunc = function() { console.log("Always like this")};
+    const helloA = function() { console.log("Hello A")};
+    const helloB = function() { console.log("Hello B")};
+    
+    constFunc();
+    // constFunc = helloA;     // Break Here
+
+    let helloFunc = helloA;
+    helloFunc();
+
+    helloFunc = helloB;
+    helloFunc();
+
+    let funcArray = [helloA, helloA, helloB, helloA, helloB];
+    funcArray.forEach((item) => {
+        item();
+    });
+    
+
+
+
+
+
+    console.log("\n\nExperiment 3: Const Array");
+    console.log("------------------------------------------");
+
+    const constantArray = [1, 2, 3];
+
+    // constantArray = [2, 4, 6];   // break here
+
+    console.log("constantArray=", constantArray);
+    constantArray.push(4);
+    console.log("afterPush: constantArray=", constantArray); // Note: Mutable even const 
+
+    let immutableArray = Object.freeze(constantArray);  // 
+    console.log("immutableArray=", immutableArray);
+    // constantArray.push(4);           // break here 
+    //console.log("afterPush: immutableArray=", immutableArray); // Note: Mutable even const 
+
+
+    // 
+
+
+</script>
+
+</html>

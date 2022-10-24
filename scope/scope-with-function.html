@@ -70,17 +70,125 @@
     // ------------
 
     // Snippet 5  
-    function foo(expr) {
-        //'use strict';
-        eval(expr);     // cheating, but it's not good
-        console.log("a=", a);
-    }
+    // function foo(expr) {
+    //     //'use strict';
+    //     eval(expr);     // cheating, but it's not good
+    //     console.log("a=", a);
+    // }
 
-    foo('var a=20');      // a=20
-                          // a is not defined ('use strict')
-    
+    // foo('var a=20');      // a=20
+    //                       // a is not defined ('use strict')
+
     // ------------
 
+    // Snippet 6 
+    // function foo(a) {
+    //     var b = 2;
+
+    //     // some code
+
+    //     function bar() {
+    //         // ...
+    //     }
+
+    //     // more code
+
+    //     var c = 3;
+    // }
+
+    // // bar();  // not define 
+    // // console.log(a, b, c);
+    // // console.log(b, c);
+    // console.log(c);
+
+    // ------------
+
+    // Snippet 7
+    // function foo() {
+    //     function bar(a) {
+    //         let i = 3;      // changing the `i` in the enclosing scope's for-loop
+    //                         // let -> var will cause infinity loop
+    //         console.log(a + i);
+    //     }
+
+    //     for (var i = 0; i < 10; i++) {
+    //         bar(i * 2); 
+    //     }
+    // }
+
+    // foo();
+
+    // ------------
+    // Snippet 8 // lexical scope 
+    // var a = 1;
+    // function foo() {
+    //     var b = 2;
+    //     function innerFoo() {
+    //         var c = 3
+    //         function innestFoo() {
+    //             var d = 4;
+    //             console.log("innestFoo: ", a, b, c, d);
+    //         }
+
+    //         innestFoo();
+    //         console.log("innerFoo: ", a, b, c);
+    //     }
+
+    //     innerFoo();
+    //     console.log("foo: ", a, b);
+    // }
+
+    // foo();
+    // ------------
+
+
+    
+    // Snippet 9
+    // let a = 1;
+    // function foo() {
+    //     let b = 2;
+
+    //     function innerFoo() {
+    //         let c = 3
+
+    //         function innestFoo() {
+    //             let d = 4;
+    //             console.log("innestFoo: ", a, b, c, d);
+    //         }
+
+    //         innestFoo();
+    //         console.log("innerFoo: ", a, b, c);
+    //     }
+
+    //     innerFoo();
+    //     console.log("foo: ", a, b);
+    // }
+
+    // foo();
+    // ------------
+
+
+    // ------------
+    // Snippet 9 // lexical scope 
+    var a = 1;
+    function foo() {
+        
+        function innerFoo() {
+            var c = 3
+            a = a + 1;
+            b = b + 1;
+            console.log("innerFoo: ", a, b, c);
+        }
+
+        
+        var b = 2;
+        innerFoo();
+        a = a + 1;
+        console.log("foo: ", a, b);
+    }
+
+    foo();
+    
 </script>
 
 </html>

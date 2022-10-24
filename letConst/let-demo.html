@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Const Demo</title>
+</head>
+
+<body>
+    <h2>Let Demo</h2>
+
+</body>
+<script>
+
+    console.log("\n\nExperiment 1: let Value");
+    console.log("------------------------------------------");
+
+    let letValue = 1;
+    //let letValue = 2;
+
+    let varValue = 1;
+    // let varValue = 2;
+
+    value = 1;
+    value = 2;
+
+    console.debug(letValue, varValue, value);
+
+
+    function foo() {
+        var varValue = 9999;
+        let letValue = 8888;
+        value = 7777;
+
+        newValue = 44;
+    }
+
+    foo();
+    console.debug("after.foo=", letValue, varValue, value);
+    console.debug("after.foo=", newValue);
+
+
+</script>
+
+</html>

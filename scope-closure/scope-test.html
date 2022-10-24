@@ -39,12 +39,13 @@
    console.log("Undefind Var=", undefineVar);
    
 
-   var innerVar;
+   var innerVar = 0;
+   console.log("Before aFunction declaration: innerVar=" + innerVar);
    console.log("Before aFunction declaration: " + aFunction() + " innerVar=" + innerVar);
 
    function aFunction() {
-        innerVar = 123;              // ken: see if remove 'var' declaration
-       return "[" + "aVar=" + aVar + " inner=" + innerVar + "]";
+        let innerVar = 123;              // ken: see if remove 'var' declaration
+        return "[" + "aVar=" + aVar + " inner=" + innerVar + "]";
    }
 
    console.log("After aFunction declaration: " + aFunction() + " innerVar=" + innerVar);

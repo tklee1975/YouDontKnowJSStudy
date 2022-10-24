@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Demo</title>
+</head>
+
+<body>
+    <h1>Testing for Callsite</h1>
+    <h2>Open console for testing</h2>
+
+</body>
+<script>
+
+    // Example 1
+
+    // function toUpper() {
+    //     console.log("toUpper: this: ", this);
+    //     return this.toUpperCase();
+    // }
+
+
+    // // console.log(toUpper()); 
+    // console.log(toUpper.call("abcd")); 
+    // console.log("global: this: ", this);
+
+    // -----
+
+    // Example 2 
+    // function whatIsThis() {
+    //     console.log("whatIsThis: this: ", this);        
+    // }
+
+    // whatIsThis();
+
+    // var funcExpr = function getUpperName(name) {
+    //     console.log("funcExpr.this: ", this);
+    //     whatIsThis();
+    //     return name;
+    // }
+    // funcExpr();
+
+    // {
+    //     console.log("Inside Block Scope");
+    //     whatIsThis();
+    // }
+
+    // (function () {
+    //     console.log("IIFE: this=", this);    // this is also window
+    //     whatIsThis();
+    // })();
+
+    // Example 3    (Inside an object)
+
+
+    // var anObject = {
+    //     x: 10, 
+    //     y: 10, 
+    //     info: function() {
+    //         console.log("anObject.this: ", this);
+    //         return this.x + ", " + this.y;
+    //     }
+    // }
+    // anObject.info();
+
+
+    // Example 4    (Inside an object)
+
+
+    // var anObject = {
+    //     x: 10, 
+    //     y: 10, 
+    //     info: function() {
+    //         console.log("anObject.this: ", this);
+    //         return this.x + ", " + this.y;
+    //     }
+    // }
+    // anObject.info();
+    // -----
+
+    // Example 5   (Inside an object)
+
+    // function foo(num) {
+    //     console.log("foo: " + num);
+
+    //     // keep track of how many times `foo` is called
+    //     this.count++;
+    // }
+
+    // foo.count = 0;
+    // var i;
+    // var count = 0;
+    // for (i = 0; i < 10; i++) {
+    //     foo(i);
+    // }
+    // // foo: 6
+    // // foo: 7
+    // // foo: 8
+    // // foo: 9
+
+    // // how many times was `foo` called?
+    // console.log("foo.count=", foo.count); // 0 -- WTF?
+    // console.log("this.count=", this.count); // 0 -- WTF?
+
+
+    // Example 5   (Fix) 
+
+    // function foo(num) {
+    //     console.log("foo: " + num);
+    //     if(foo.count == undefined) {
+    //         foo.count = 0;
+    //     }
+    //     // keep track of how many times `foo` is called
+    //     foo.count++;
+    // }
+
+    // var i;
+    // for (i = 0; i < 10; i++) {
+    //     foo(i);
+    // }
+    // console.log("foo.count=", foo.count); // 0 -- WTF?
+
+    // -----
+
+
+    // Example 6 (this is different from not this)
+
+    // function foo() {
+    //     var a = 2;
+
+    //     function bar() {
+    //         console.log(a);
+    //     }
+
+    //     bar();
+    // }
+
+
+    // foo();  
+
+    // Example 6 (this is different from not this)
+
+    function foo() {
+        var a = 2;
+
+        function bar() {
+            console.log(this.a);
+        }
+
+        this.bar();
+    }
+
+
+    foo();  
+
+
+
+
+    // -----
+
+</script>
+
+</html>

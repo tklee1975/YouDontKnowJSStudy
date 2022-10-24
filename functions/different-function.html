@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Different Functions</title>
+</head>
+
+<body>
+    <h2>Different Functions</h2>
+
+</body>
+<script>
+
+
+function functionA() {
+    console.log("functionA: this is a func declaration. this=", this);
+}
+
+var functionB = function () {
+    console.log("functionB: this is a func expression. this=", this);
+}
+
+var functionC = () => {
+    console.log("functionC: this is an arrow func. this=", this);
+}
+
+// functionA();
+// functionB();
+// functionC();
+
+
+
+// Note: try to move up
+
+const obj = {
+    name: 'special object',
+    actionA() {
+        function methodA() {
+            console.log("methodA: this is a func expression. this=", this);
+        }
+
+        var methodB = function () {
+            console.log("methodB: this is a func expression. this=", this);
+        }
+
+        var methodC = () => {
+            console.log("methodC: this is an arrow func. this=", this);
+        }
+
+        methodA();
+        methodB();
+        methodC();
+        methodB.bind(this)();
+    }
+}
+
+obj.actionA();
+
+</script>    
+
+
+
+</html>

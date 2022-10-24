@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Demo</title>
+</head>
+
+<body>
+    <h2>Open console for testing</h2>
+
+</body>
+<script>
+    // Example 1 
+    // function baz() {
+    //     // call-stack is: `baz`
+    //     // so, our call-site is in the global scope
+
+    //     console.log("baz");
+    //     bar(); // <-- call-site for `bar`
+    // }
+
+    // function bar() {
+    //     // call-stack is: `baz` -> `bar`
+    //     // so, our call-site is in `baz`
+
+    //     console.log("bar");
+    //     foo(); // <-- call-site for `foo`
+    // }
+
+    // function foo() {
+    //     // call-stack is: `baz` -> `bar` -> `foo`
+    //     // so, our call-site is in `bar`
+
+    //     console.log("foo");
+    // }
+
+    // baz(); // <-- call-site for `baz`
+    // --------
+
+
+    // Example 2
+    function baz() {
+        var a = 100;
+        // call-stack is: `baz`
+        // so, our call-site is in the global scope
+
+        var bar = function() {
+            // call-stack is: `baz` -> `bar`
+            // so, our call-site is in `baz`
+
+            console.log("bar: this.a=", this);
+            foo(); // <-- call-site for `foo`
+        }
+        
+        console.log("baz: this.a=", this.a);
+        bar(); // <-- call-site for `bar`
+
+        
+    }
+
+
+
+    function foo() {
+        // call-stack is: `baz` -> `bar` -> `foo`
+        // so, our call-site is in `bar`
+
+        console.log("foo");
+    }
+
+    var a = 10;
+    baz(); // <-- call-site for `baz`
+    // --------
+</script>
+
+</html>

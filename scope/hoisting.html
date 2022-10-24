@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Demo</title>
+</head>
+
+<body>
+    <h1>Testing Scope & Variable</h1>
+    <h2>Open console for testing</h2>
+
+</body>
+<script>
+    // Snippet 1    
+    // a = 2; 
+    // console.log("a=", a);
+    // var a; 
+    // console.log("a=", a);
+    // ------------
+
+    // Snippet 2 
+    // var a; 
+    // console.log("a=", a);
+    // a = 2;
+    // console.log("a=", a);
+    // ------------
+
+    // Snippet 3 
+
+    // console.log("a=", a);       // showing undefined 
+    // a = 2;
+    // console.log("a=", a);       // showing a = 2
+
+    // var a; 
+    //let a;                      // Cannot access 'a' before initialization
+    // ------------
+
+    // // Snippet 4
+    // function foo() {
+    //     //console.log(a);     // undefined
+
+    //     //var a = 2;          // it's same as var a, a=2
+    //     a = 2;                // it's same as var a, a=2
+    //     console.log("a=", a);       // 2
+    // }
+
+    // foo();
+
+    // function foo() {
+    //     //console.log(a);     // undefined
+
+    //     //var a = 2;          // it's same as var a, a=2
+    //     a = 2;                // it's same as var a, a=2
+    //     console.log("b=", a);       // 2
+    // }
+
+    // foo();
+
+    // ------------
+
+    // Snippet 5
+
+    // foo(); // not 'not defined', but TypeError!
+
+    // var foo = function bar() {
+    //     // ...
+    //     console.log("bar is called");
+    // };
+
+    // var foo = function() {
+    //     // ...
+    //     console.log("foo is called");
+    // };
+
+    // function foo() {
+    //     // ...
+    //     console.log("foo is called");
+    // };
+
+    // ------------
+
+    // Snippet 5 (Fixed 1)
+
+
+
+    // var foo = function bar() {  // it is a function expression
+    //     // ...
+    //     console.log("bar is called");
+    // };
+    // foo(); // showing bar 
+    // ------------
+
+    // Snippet 5 (Fixed 2)
+
+    // foo(); // showing bar 
+
+    // function foo() {  // function is hoisted
+    //     // ...
+    //     console.log("foo is called");
+    // };
+
+    // ------------
+
+    // // Snippet 6 
+    // foo();              // 1
+
+    // var foo = 2;
+
+    // function foo() {
+    //     console.log(1);
+    // }
+
+    // Snippet 7            (the last one is hoisted)
+    // foo();              // 2
+
+    // function foo() {
+    //     console.log(1);
+    // }
+
+    // function foo() {
+    //     console.log(2);
+    // }
+
+    // Snippet 8
+    // foo(); // "b"
+
+    // var a = true;
+    // if (a) {
+    //     function foo() { console.log("a"); }
+    // }
+    // else {
+    //     function foo() { console.log("b"); }
+    // }
+    // function copy(object1, object1) {
+
+    // }
+
+var object1 = {name: 'a', value: 1};
+
+var object2 = object1;
+
+object2.name = 'b';
+console.log("object1="+JSON.stringify(object1) + " object=2" + JSON.stringify(object2));
+
+var object3 = JSON.parse(JSON.stringify(object1));
+
+
+</script>
+
+</html>

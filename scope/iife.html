@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Demo</title>
+</head>
+
+<body>
+    <h1>IIFE</h1>
+    <h2>Open console for testing</h2>
+
+</body>
+<script>
+    // Snippet 1    
+    // var a = 2;
+
+    // function foo() { // <-- insert this
+
+    //     var a = 3;
+    //     console.log(a); // 3
+
+    // } // <-- and this
+    // foo(); // <-- and this
+
+    // console.log(a); // 2
+    // ------------
+
+
+    // Snippet 2  - IIFE
+    // var a = 2;
+
+    // (function foo() { 
+
+    //     var a = 3;
+    //     console.log(a); // 3
+
+    // })()
+    // //foo(); // <-- and this
+
+    // console.log(a); // 2
+    // // foo();      // foo is not defined
+
+    // ------------
+
+
+    // Snippet 3 - IIFE 
+    var a = 2;
+
+    (function() {       // using anonmyous function 
+
+        var a = 3;
+        console.log(a); // 3
+
+    })()
+    //foo(); // <-- and this
+
+    console.log(a); // 2
+    // foo();      // foo is not defined
+
+    // ------------
+</script>
+
+</html>

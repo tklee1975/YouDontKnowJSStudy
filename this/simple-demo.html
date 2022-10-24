@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Demo about This</title>
+</head>
+
+<body>
+    <h2>Simple Demo about This</h2>
+    <h4>Note</h4>
+    <a href="https://www.udemy.com/course/understand-javascript/learn/lecture/2237526#notes">Udemy Course</a>
+    <a href="https://github.com/getify/You-Dont-Know-JS/blob/1st-ed/this%20&%20object%20prototypes/README.md#you-dont-know-js-this--object-prototypes">You dont know JS</a>
+</body>
+
+
+<script>
+
+console.log("Experiment 1: Global Scope");
+console.log("------------------------------------------");
+console.log(this);
+
+function foo() {
+    console.log("foo: ", this);     // Window 
+}
+
+const fooExp = function () { // using expression
+    console.log("fooExp: ", this);  // Window 
+}
+
+const fooArrow = () => { // Arrow Function 
+    console.log("fooArrow: ", this);    // Window 
+}
+
+// 
+
+foo();
+fooExp();
+fooArrow();
+
+console.log("Experiment 2: inside object");
+console.log("------------------------------------------");
+
+
+
+let anObject = {
+    foo() {
+        console.log("object.foo: ", this);
+    },
+    foo2 : function() { // Same as foo 
+        console.log("object.foo2: ", this);
+    },
+    main() {
+        function mainFoo() {
+            console.log("object.mainFoo: ", this);
+        }
+
+        const mainFooExp = function() {
+            console.log("object.mainFooExp: ", this); // same as mainFoo()
+        }
+
+        const mainFooArrow = () => {
+            console.log("object.mainFooArrow: ", this); 
+        }
+
+        mainFoo();
+        mainFooExp();
+        mainFooArrow();
+    }
+}
+
+anObject.foo();
+anObject.foo2();
+anObject.main();
+
+
+
+console.log("Experiment 3: Call, Apply, Bind");
+console.log("------------------------------------------");
+
+function namedFoo(name) {
+    console.log(`${name}: ${this}`);     // Window 
+}
+
+const someone = {
+    "name": "I'm not window"
+};
+
+namedFoo("normal");
+namedFoo.call(someone, "using call");
+let bindFoo = namedFoo.bind(someone);
+bindFoo("bindFoo");
+namedFoo("normal");
+
+
+
+</script>    
+
+
+
+</html>
